@@ -21,7 +21,7 @@ app.use(cors({
 }));
 
 // 🔥 IMPORTANT (THIS LINE WAS MISSING)
-app.options('*', cors());
+app.options('/*', cors());
 app.use(express.json());
 
 const uploadsDir = path.join(__dirname, 'uploads');
