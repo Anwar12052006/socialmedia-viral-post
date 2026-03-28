@@ -11,7 +11,14 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://socialmedia-viral-post.vercel.app"
+    ],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 
 const uploadsDir = path.join(__dirname, 'uploads');
