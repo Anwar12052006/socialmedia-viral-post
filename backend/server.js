@@ -22,5 +22,5 @@ if (!fs.existsSync(uploadsDir)) {
 app.use('/api', videoRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Backend server running on http://localhost:${PORT}`);
+    console.log(`Backend server running on port ${PORT}`);
 });

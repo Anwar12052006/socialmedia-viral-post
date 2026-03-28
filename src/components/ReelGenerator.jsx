@@ -14,6 +14,8 @@ export default function ReelGenerator({ canvasRef }) {
         { id: 'GLOW_UP', name: 'Glow Up', desc: 'Bright + bold text' }
     ];
 
+
+
     const handleGenerate = async () => {
         if (!canvasRef.current) return;
 
@@ -28,7 +30,7 @@ export default function ReelGenerator({ canvasRef }) {
             formData.append('template', template);
             formData.append('text', textOverlay);
 
-            const response = await fetch('/api/generate-video', {
+            const response = await fetch('https://socialmedia-viral-post.onrender.com/api/generate-video', {
                 method: 'POST',
                 body: formData,
             });
