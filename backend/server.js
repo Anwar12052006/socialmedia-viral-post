@@ -16,9 +16,12 @@ app.use(cors({
         "http://localhost:5173",
         "https://socialmedia-viral-post.vercel.app"
     ],
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"]
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
 }));
+
+// 🔥 IMPORTANT (THIS LINE WAS MISSING)
+app.options('*', cors());
 app.use(express.json());
 
 const uploadsDir = path.join(__dirname, 'uploads');
